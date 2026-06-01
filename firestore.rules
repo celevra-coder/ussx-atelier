@@ -1,17 +1,27 @@
 rules_version = '2';
 
-// Public website can create registrations/inquiries, but nobody can read,
-// update or delete them through the client SDK. Read them from the Firebase
-// Console or an authenticated admin tool instead.
+// The public website can CREATE registrations/inquiries. Only the signed-in
+// admin (matched by email below) can READ them. Nobody can update or delete
+// from the client.
+//
+// ⚠️ Replace the email with the real admin account you create in
+// Firebase Console → Authentication → Users. Keep it lowercase.
 service cloud.firestore {
   match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email == 'stamba1337@gmail.com';
+    }
+
     match /registrations/{doc} {
       allow create: if true;
-      allow read, update, delete: if false;
+      allow read: if isAdmin();
+      allow update, delete: if false;
     }
     match /inquiries/{doc} {
       allow create: if true;
-      allow read, update, delete: if false;
+      allow read: if isAdmin();
+      allow update, delete: if false;
     }
   }
 }

@@ -1,5 +1,6 @@
 import { initializeApp, type FirebaseApp } from 'firebase/app';
 import { getFirestore, type Firestore } from 'firebase/firestore';
+import { getAuth, type Auth } from 'firebase/auth';
 import { env } from '$env/dynamic/public';
 
 /**
@@ -26,13 +27,23 @@ export const firebaseEnabled = Boolean(
 
 let app: FirebaseApp | undefined;
 let dbInstance: Firestore | undefined;
+let authInstance: Auth | undefined;
+
+function ensureApp(): FirebaseApp {
+	if (!app) app = initializeApp(firebaseConfig);
+	return app;
+}
 
 /** Lazily initialise Firestore so the SDK is only loaded when keys exist. */
 export function getDb(): Firestore | null {
 	if (!firebaseEnabled) return null;
-	if (!dbInstance) {
-		app = initializeApp(firebaseConfig);
-		dbInstance = getFirestore(app);
-	}
+	if (!dbInstance) dbInstance = getFirestore(ensureApp());
 	return dbInstance;
+}
+
+/** Lazily initialise Firebase Auth (used by the admin dashboard). */
+export function getAuthClient(): Auth | null {
+	if (!firebaseEnabled) return null;
+	if (!authInstance) authInstance = getAuth(ensureApp());
+	return authInstance;
 }
