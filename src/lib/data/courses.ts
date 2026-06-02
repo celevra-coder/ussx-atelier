@@ -26,9 +26,9 @@ export const courses: Course[] = [
 	},
 	{
 		id: 'lego-robotics',
-		title: 'Lego Роботика — строй, програмирай, победи',
+		title: 'Lego Роботика — създавай, програмирай, победи',
 		description:
-			'С Lego Mindstorms / Lego Spike комплекти децата строят роботи и ги програмират да изпълняват задачи.',
+			'С Lego Mindstorms / Lego Spike комплекти децата създават роботи и ги програмират да изпълняват задачи.',
 		fullDescription:
 			'Учат основи на програмирането, логиката и teamwork. Финалът включва мини-турнир между роботите!',
 		ageGroup: '8-12',

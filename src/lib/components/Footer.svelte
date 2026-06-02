@@ -2,27 +2,29 @@
 	const year = new Date().getFullYear();
 
 	const navLinks = [
-		{ label: 'Курсове', href: '#kursovedecata' },
-		{ label: 'Соларни решения', href: '#solarni' },
-		{ label: '3D Услуга', href: '#3d-uslugi' },
-		{ label: 'Галерия', href: '#galeria' },
-		{ label: 'За нас', href: '#za-nas' },
-		{ label: 'Екип', href: '#ekip' },
-		{ label: 'FAQ', href: '#faq' }
-	];
+        { label: 'STEM кръжоци', href: '/stem-krajozi' },
+        { label: 'Соларни решения и обучения', href: '/solarni-reshenia' },
+        { label: 'Креативно инженерство', href: '/kreativno-inzhenerstvo' },
+        { label: 'Галерия', href: '/galeria' },
+        { label: 'За нас', href: '/za-nas' },
+        { label: 'FAQ', href: '/faq' }
+];
 
 	const serviceLinks = [
-		{ label: '3D Печат за протоипи', href: '#3d-uslugi' },
-		{ label: 'Персонализирани подаръци', href: '#3d-uslugi' },
-		{ label: 'Соларен монтаж', href: '#solarni' },
-		{ label: 'Консултация', href: '#contact' }
-	];
+        { label: 'STEM кръжоци за деца', href: '/stem-krajozi' },
+        { label: 'Соларни услуги', href: '/solarni-reshenia' },
+        { label: 'Соларни обучения', href: '/solarni-reshenia#contact' },
+        { label: 'Креативно инженерство', href: '/kreativno-inzhenerstvo' }
+];
 
-	function scrollTo(href: string) {
-		if (href.startsWith('#')) {
-			document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-		}
-	}
+	function goTo(href: string) {
+        if (href.startsWith('#')) {
+                document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+                return;
+        }
+
+        window.location.href = href;
+}
 </script>
 
 <footer style="background: #080C18; border-top: 1px solid rgba(59,111,232,0.15);">
@@ -37,15 +39,33 @@
 				<p class="mb-4 text-sm leading-relaxed text-brand-muted">
 					Ателие за 3D печат и зелени технологии. Вдъхновяваме следващото поколение изобретатели.
 				</p>
-				<!-- Social (replace href="#social-name" with real URLs when available) -->
-				<div class="flex gap-4">
-					<a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-brand-muted transition-colors hover:text-brand-blue-light">
-						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-					</a>
-					<a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-brand-muted transition-colors hover:text-brand-blue-light">
-						<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
-					</a>
-				</div>
+				<div class="flex flex-col gap-2">
+        <a
+                href="https://www.facebook.com/profile.php?id=61587114675170"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-sm text-brand-muted transition-colors hover:text-brand-blue-light"
+                aria-label="Facebook страница Ателие за 3D печат и зелени технологии"
+        >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+                Ателие за 3D печат и зелени технологии
+        </a>
+
+        <a
+                href="https://www.facebook.com/profile.php?id=61586529276352"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-sm text-brand-muted transition-colors hover:text-brand-blue-light"
+                aria-label="Facebook страница Курсове за соларни специалисти"
+        >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+                Курсове за соларни специалисти
+        </a>
+</div>
 			</div>
 
 			<!-- Navigation -->
@@ -54,7 +74,7 @@
 				<ul class="space-y-2">
 					{#each navLinks as link}
 						<li>
-							<button onclick={() => scrollTo(link.href)} class="text-sm text-brand-muted transition-colors hover:text-brand-text">
+							<button onclick={() => goTo(link.href)} class="text-sm text-brand-muted transition-colors hover:text-brand-text">
 								{link.label}
 							</button>
 						</li>
@@ -68,7 +88,7 @@
 				<ul class="space-y-2">
 					{#each serviceLinks as link}
 						<li>
-							<button onclick={() => scrollTo(link.href)} class="text-sm text-brand-muted transition-colors hover:text-brand-text">
+							<button onclick={() => goTo(link.href)} class="text-sm text-brand-muted transition-colors hover:text-brand-text">
 								{link.label}
 							</button>
 						</li>
@@ -80,10 +100,20 @@
 			<div>
 				<h4 class="mb-4 text-sm font-bold uppercase tracking-widest text-brand-muted" style="font-family: var(--font-display);">Контакти</h4>
 				<address class="space-y-2 text-sm text-brand-muted not-italic">
-					<p>📍 България, [Адрес]</p>
-					<p>📞 <a href="tel:+35900000000" class="hover:text-brand-text transition-colors">+359 00 000 0000</a></p>
-					<p>✉️ <a href="mailto:info@ussx.bg" class="hover:text-brand-text transition-colors">info@ussx.bg</a></p>
-				</address>
+        <p>📍 гр. Пловдив, бул. „Христо Ботев“ 27А</p>
+        <p>
+                📞
+                <a href="tel:+359878881815" class="transition-colors hover:text-brand-text">
+                        0878 881 815
+                </a>
+        </p>
+        <p>
+                ✉️
+                <a href="mailto:atelie3dpechat@gmail.com" class="transition-colors hover:text-brand-text">
+                        atelie3dpechat@gmail.com
+                </a>
+        </p>
+</address>
 			</div>
 		</div>
 

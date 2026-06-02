@@ -4,16 +4,16 @@
 	import { inview } from '$lib/actions/inview';
 
 	const images = [
-		{ src: '/images/gallery/gallery-1.jpg', alt: 'Дете работи с 3D принтер' },
-		{ src: '/images/gallery/gallery-2.jpg', alt: 'Lego роботи на турнир' },
-		{ src: '/images/gallery/gallery-3.jpg', alt: 'Готов 3D отпечатан обект' },
-		{ src: '/images/gallery/gallery-4.jpg', alt: 'Деца строят Infento превозно средство' },
-		{ src: '/images/gallery/gallery-5.jpg', alt: 'Соларни панели на покрив' },
-		{ src: '/images/gallery/gallery-6.jpg', alt: 'Екипът на USSX' },
-		{ src: '/images/gallery/gallery-7.jpg', alt: 'Програмиране на робот' },
-		{ src: '/images/gallery/gallery-8.jpg', alt: 'Детски проект от 3D принтер' },
-		{ src: '/images/gallery/gallery-9.jpg', alt: 'Lego Spike Prime комплект' }
-	];
+        { src: '/images/gallery/gallery-1.png', alt: 'STEM работилница с 3D печат' },
+        { src: '/images/gallery/gallery-2.png', alt: 'Практическо соларно обучение' },
+        { src: '/images/gallery/gallery-3.png', alt: 'Групово обучение със соларни панели' },
+        { src: '/images/gallery/gallery-4.png', alt: 'RC проект и инженерно мислене' },
+        { src: '/images/gallery/gallery-5.png', alt: 'Деца в работилница с RC проект' },
+        { src: '/images/gallery/gallery-6.png', alt: 'Infento инженерна конструкция' },
+        { src: '/images/gallery/gallery-7.png', alt: 'Ученически екип на състезание' },
+        { src: '/images/gallery/gallery-8.png', alt: 'ПГИКН „Акад. Благовест Сендов“' },
+        { src: '/images/gallery/gallery-9.png', alt: 'USS-X обучение и проекти' }
+];
 
 	let lightboxIndex = $state<number | null>(null);
 
@@ -62,10 +62,10 @@
 <section id="galeria" class="py-24" style="background-color: #111827;">
 	<div class="mx-auto max-w-7xl px-4 sm:px-6">
 		<div class="reveal mb-12 text-center" use:inview>
-			<h2 class="section-title">Живот в ателието</h2>
+			<h2 class="section-title">СВЕТЪТ НА USS-X</h2>
 			<p class="mt-4 text-brand-muted">
-				Моменти от курсовете, проектите и ежедневието на USSX.
-			</p>
+        Моменти от нашите кръжоци, обучения, проекти, състезания и технологии в действие.
+</p>
 		</div>
 
 		<!-- Masonry-style grid -->
@@ -87,15 +87,14 @@
 							style="background: linear-gradient(135deg, rgba(59,111,232,0.15), rgba(168,230,61,0.1)); border: 1px solid rgba(110,198,245,0.1);"
 						>
 							<img
-								src={img.src}
-								alt={img.alt}
-								loading="lazy"
-								class="absolute inset-0 h-full w-full object-cover"
-								onerror={(e) => {
-									(e.currentTarget as HTMLImageElement).style.display = 'none';
-								}}
-							/>
-							<span class="relative z-10 p-2 text-center">{img.alt}</span>
+        src={img.src}
+        alt={img.alt}
+        loading="lazy"
+        class="absolute inset-0 h-full w-full object-cover"
+        onerror={(e) => {
+                (e.currentTarget as HTMLImageElement).style.display = 'none';
+        }}
+/>
 						</div>
 						<!-- Hover overlay -->
 						<div
@@ -163,7 +162,7 @@
 						(e.currentTarget as HTMLImageElement).style.display = 'none';
 					}}
 				/>
-				<p class="p-8 text-center">{images[lightboxIndex].alt}</p>
+				
 			</div>
 		</div>
 

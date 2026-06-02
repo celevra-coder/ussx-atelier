@@ -49,6 +49,7 @@
 		"@fontsource/nunito": "^5.2.7",
 		"@fontsource/orbitron": "^5.2.8",
 		"firebase": "^12.14.0",
-		"lucide-svelte": "^1.0.1"
+		"lucide-svelte": "^1.0.1",
+		"resend": "^6.12.4"
 	}
 }

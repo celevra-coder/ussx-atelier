@@ -6,14 +6,12 @@
 	let mobileOpen = $state(false);
 
 	const links = [
-		{ label: 'Курсове', href: '#kursovedecata' },
-		{ label: 'Соларни', href: '#solarni' },
-		{ label: '3D Услуга', href: '#3d-uslugi' },
-		{ label: 'Галерия', href: '#galeria' },
-		{ label: 'За нас', href: '#za-nas' },
-		{ label: 'Екип', href: '#ekip' },
-		{ label: 'FAQ', href: '#faq' }
-	];
+        { label: 'STEM кръжоци', href: '/stem-krajozi' },
+        { label: 'Соларни', href: '/solarni-reshenia' },
+        { label: 'Креативно инженерство', href: '/kreativno-inzhenerstvo' },
+        { label: 'За нас', href: '/za-nas' },
+        { label: 'Галерия', href: '/galeria' }
+];
 
 	$effect(() => {
 		function onScroll() {
@@ -37,11 +35,17 @@
 		mobileOpen = false;
 	}
 
-	function scrollTo(href: string) {
-		closeMenu();
-		const el = document.querySelector(href);
-		el?.scrollIntoView({ behavior: 'smooth' });
-	}
+	function goTo(href: string) {
+        closeMenu();
+
+        if (href.startsWith('#')) {
+                const el = document.querySelector(href);
+                el?.scrollIntoView({ behavior: 'smooth' });
+                return;
+        }
+
+        window.location.href = href;
+}
 </script>
 
 <header
@@ -50,28 +54,32 @@
 >
 	<nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
 		<!-- Logo -->
-		<a href="/" class="flex items-center gap-3" aria-label="USSX начало">
-			<img
-				src="/images/logo.png"
-				alt="USSX куб"
-				class="h-10 w-10"
-				width="40"
-				height="40"
-			/>
-			<span
-				class="font-display text-xl font-bold tracking-wider text-brand-text"
-				style="font-family: var(--font-display);"
-			>
-				USSX
-			</span>
-		</a>
+		<a
+        href="/"
+        class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2 shadow-[0_8px_30px_rgba(0,0,0,0.18)] backdrop-blur-md transition hover:bg-white/[0.07]"
+        aria-label="USSX и училище"
+>
+        <img
+                src="/images/ussx-mark-transparent.png"
+                alt="USSX"
+                class="h-11 w-auto object-contain md:h-14"
+        />
+
+        <span class="h-9 w-px bg-white/20 md:h-11"></span>
+
+        <img
+                src="/images/school-mark-transparent.png"
+                alt="ПГИКН"
+                class="h-10 w-auto object-contain md:h-13"
+        />
+</a>
 
 		<!-- Desktop links -->
 		<ul class="hidden items-center gap-6 md:flex">
 			{#each links as link}
 				<li>
 					<button
-						onclick={() => scrollTo(link.href)}
+						onclick={() => goTo(link.href)}
 						class="text-sm font-semibold text-brand-muted transition-colors hover:text-brand-text"
 						style="font-family: var(--font-body);"
 					>
@@ -84,7 +92,7 @@
 		<!-- CTA + Mobile toggle -->
 		<div class="flex items-center gap-3">
 			<button
-				onclick={() => scrollTo('#contact')}
+				onclick={() => goTo('/stem-krajozi#contact')}
 				class="btn-primary hidden text-sm sm:inline-flex"
 			>
 				Свържи се
@@ -113,14 +121,14 @@
 		<nav class="flex flex-col items-center gap-6 p-6">
 			{#each links as link}
 				<button
-					onclick={() => scrollTo(link.href)}
+					onclick={() => goTo(link.href)}
 					class="text-xl font-bold text-brand-text transition-colors hover:text-brand-blue-light"
 					style="font-family: var(--font-display);"
 				>
 					{link.label}
 				</button>
 			{/each}
-			<button onclick={() => scrollTo('#contact')} class="btn-primary mt-4 w-full max-w-xs">
+			<button onclick={() => goTo('/stem-krajozi#contact')} class="btn-primary mt-4 w-full max-w-xs">
 				Свържи се
 			</button>
 		</nav>

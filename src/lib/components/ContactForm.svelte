@@ -4,7 +4,9 @@
 
 	type InquiryType = 'course' | 'print' | 'solar';
 
-	let type = $state<InquiryType>('course');
+	let { defaultType = 'course' }: { defaultType?: InquiryType } = $props();
+
+let type = $state<InquiryType>(defaultType);
 	let submitting = $state(false);
 	let submitted = $state(false);
 	let submitError = $state('');
@@ -26,10 +28,11 @@
 
 	// Service form fields
 	let serviceName = $state('');
-	let serviceEmail = $state('');
-	let servicePhone = $state('');
-	let serviceDescription = $state('');
-	let acceptGdpr = $state(false);
+let serviceEmail = $state('');
+let servicePhone = $state('');
+let serviceDescription = $state('');
+let solarTrainingDescription = $state('');
+let acceptGdpr = $state(false);
 
 	function validate(): boolean {
 		const errs: Record<string, string> = {};
@@ -50,8 +53,15 @@
 			if (!serviceEmail.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(serviceEmail))
 				errs.serviceEmail = 'Невалиден имейл';
 			if (!servicePhone.trim()) errs.servicePhone = 'Задължително поле';
-			if (!serviceDescription.trim()) errs.serviceDescription = 'Задължително поле';
-			if (!acceptGdpr) errs.acceptGdpr = 'Необходимо е съгласие за обработка на данни';
+			if (type === 'print' && !serviceDescription.trim()) {
+        errs.serviceDescription = 'Задължително поле';
+}
+
+if (type === 'solar' && !serviceDescription.trim() && !solarTrainingDescription.trim()) {
+        errs.serviceDescription = 'Попълнете запитване за услуга или обучение';
+}
+
+if (!acceptGdpr) errs.acceptGdpr = 'Необходимо е съгласие за обработка на данни';
 		}
 		errors = errs;
 		const firstError = Object.keys(errs)[0];
@@ -73,26 +83,51 @@
 		submitError = '';
 		try {
 			if (type === 'course') {
-				await submitRegistration({
-					parentName,
-					parentEmail,
-					parentPhone,
-					childName,
-					childDob,
-					experience,
-					selectedCourse,
-					ageGroup,
-					preferredTime,
-					message
-				});
-			} else {
-				await submitInquiry({
-					inquiryType: type,
-					name: serviceName,
-					email: serviceEmail,
-					phone: servicePhone,
-					description: serviceDescription
-				});
+        const payload = {
+                parentName,
+                parentEmail,
+                parentPhone,
+                childName,
+                childDob,
+                experience,
+                selectedCourse,
+                ageGroup,
+                preferredTime,
+                message
+        };
+
+        await submitRegistration(payload);
+
+        await fetch('/api/notify', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                        type,
+                        ...payload
+                })
+        });
+} else {
+				const payload = {
+        inquiryType: type,
+        name: serviceName,
+        email: serviceEmail,
+        phone: servicePhone,
+        description:
+                type === 'solar'
+                        ? `Запитване за услуга: ${serviceDescription || 'няма'}\n\nЗапитване за обучение: ${solarTrainingDescription || 'няма'}`
+                        : serviceDescription
+};
+
+await submitInquiry(payload);
+
+await fetch('/api/notify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+                type,
+                ...payload
+        })
+});
 			}
 			submitted = true;
 		} catch (err) {
@@ -124,7 +159,7 @@
 		<div class="reveal mb-12 text-center" use:inview>
 			<h2 class="section-title">Свържи се с нас</h2>
 			<p class="mt-4 text-brand-muted">
-				Запишете дете за курс, поискайте оферта за 3D печат или заявете соларна консултация.
+				Запишете дете за кръжок, поискайте оферта за 3D печат или заявете соларна консултация или обучение.
 			</p>
 		</div>
 
@@ -165,7 +200,7 @@
 			<div class="reveal card-gradient-border p-6 sm:p-8" use:inview>
 				<!-- Type selector -->
 				<div class="mb-8 flex flex-wrap gap-2">
-					{#each [['course', 'Запис за курс'], ['print', 'Запитване за 3D печат'], ['solar', 'Запитване за соларни']] as [val, label]}
+					{#each [['course', 'Запис на дете'], ['print', 'Запитване за 3D печат'], ['solar', 'Соларни услуги/обучения']] as [val, label]}
 						<button
 							onclick={() => { type = val as InquiryType; errors = {}; }}
 							class="rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200"
@@ -313,22 +348,44 @@
 								</div>
 							</div>
 
-							<div>
-								<label for="serviceDescription" class={labelClass}>
-									{type === 'print' ? 'Описание на поръчката *' : 'Описание на нуждата *'}
-								</label>
-								<textarea
-									id="serviceDescription"
-									bind:value={serviceDescription}
-									class={inputClass}
-									rows="4"
-									aria-invalid={!!errors.serviceDescription}
-									placeholder={type === 'print'
-										? 'Опишете какво искате да принтирате — материал, размери, количество...'
-										: 'Опишете имота и нуждите си — вид сграда, месечно потребление, бюджет...'}
-								></textarea>
-								{#if errors.serviceDescription}<p class={errorClass}>{errors.serviceDescription}</p>{/if}
-							</div>
+							{#if type === 'solar'}
+        <div>
+                <label for="serviceDescription" class={labelClass}>Запитване за услуга</label>
+                <textarea
+                        id="serviceDescription"
+                        bind:value={serviceDescription}
+                        class={inputClass}
+                        rows="4"
+                        aria-invalid={!!errors.serviceDescription}
+                        placeholder="Опишете каква соларна услуга ви интересува — консултация, оглед, проект, инсталация, имот, потребление..."
+                ></textarea>
+                {#if errors.serviceDescription}<p class={errorClass}>{errors.serviceDescription}</p>{/if}
+        </div>
+
+        <div>
+                <label for="solarTrainingDescription" class={labelClass}>Запитване за обучение</label>
+                <textarea
+                        id="solarTrainingDescription"
+                        bind:value={solarTrainingDescription}
+                        class={inputClass}
+                        rows="4"
+                        placeholder="Опишете какво обучение ви интересува — за ученици, възрастни, практически демонстрации, соларни системи, монтаж, поддръжка..."
+                ></textarea>
+        </div>
+{:else}
+        <div>
+                <label for="serviceDescription" class={labelClass}>Описание на поръчката *</label>
+                <textarea
+                        id="serviceDescription"
+                        bind:value={serviceDescription}
+                        class={inputClass}
+                        rows="4"
+                        aria-invalid={!!errors.serviceDescription}
+                        placeholder="Опишете какво искате да принтирате — материал, размери, количество..."
+                ></textarea>
+                {#if errors.serviceDescription}<p class={errorClass}>{errors.serviceDescription}</p>{/if}
+        </div>
+{/if}
 
 							<div class="border-t pt-4" style="border-color: rgba(110,198,245,0.1);">
 								<label class="flex cursor-pointer items-start gap-3">

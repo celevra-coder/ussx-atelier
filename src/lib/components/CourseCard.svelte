@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Printer, Cpu, Bike, Clock, Users, Tag } from 'lucide-svelte';
+	import { Printer, Cpu, Bike, Clock, Users } from 'lucide-svelte';
 	import type { Course } from '$lib/data/courses';
 
 	let { course }: { course: Course } = $props();
@@ -17,7 +17,7 @@
 	}
 </script>
 
-<article class="card-gradient-border group flex flex-col gap-5 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(59,111,232,0.25)]">
+<article class="card-gradient-border group flex h-full flex-col gap-5 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(59,111,232,0.25)]">
 	<!-- Icon -->
 	<div
 		class="flex h-14 w-14 items-center justify-center rounded-xl"
@@ -70,10 +70,7 @@
 			<Users size={14} />
 			до 10 деца
 		</span>
-		<span class="flex items-center gap-1.5">
-			<Tag size={14} />
-			{course.price}
-		</span>
+		
 	</div>
 
 	<!-- CTA -->

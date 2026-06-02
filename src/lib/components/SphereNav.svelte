@@ -6,29 +6,28 @@
 		{
 			cls: 'sphere-blue',
 			Icon: GraduationCap,
-			title: 'Курсове за деца',
-			text: '3D печат, Lego роботика, Infento',
-			href: '#kursovedecata'
+			title: 'STEM кръжоци за деца',
+			text: 'Практически занимания с технологии и роботика',
+			href: '/stem-krajozi'
 		},
 		{
 			cls: 'sphere-lime',
 			Icon: Sun,
-			title: 'Соларни решения',
-			text: 'Консултации и инсталации за дома и бизнеса',
-			href: '#solarni'
+			title: 'Соларни решения и обучения',
+			text: 'Консултации, обучения и решения за дома и бизнеса',
+			href: '/solarni-reshenia'
 		},
 		{
 			cls: 'sphere-cyan',
 			Icon: Box,
-			title: '3D Печат услуга',
-			text: 'Принтираме вашите идеи на заявка',
-			href: '#3d-uslugi'
+			title: 'Креативно инженерство',
+			text: 'Проектиране, прототипиране и 3D изработка',
+			href: '/kreativno-inzhenerstvo'
 		}
 	];
 
-	function scrollTo(href: string) {
-		document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
-	}
+	
+	
 </script>
 
 <section class="dot-grid py-20">
@@ -46,13 +45,13 @@
 					use:inview
 					style="transition-delay: {i * 150}ms;"
 				>
-					<button
-						onclick={() => scrollTo(href)}
-						class="sphere {cls} focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-light"
-						aria-label="Към {title}"
-					>
-						<Icon size={48} color="white" strokeWidth={1.5} />
-					</button>
+					<a
+        href={href}
+        class="sphere {cls} focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-light"
+        aria-label="Към {title}"
+>
+        <Icon size={48} color="white" strokeWidth={1.5} />
+</a>
 					<h3
 						class="text-lg font-bold text-brand-text"
 						style="font-family: var(--font-display);"
