@@ -96,7 +96,7 @@
                 onclick={toggleHomeVideo}
                 class={[
                         'absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/45 text-white shadow-[0_0_35px_rgba(255,255,255,0.25)] backdrop-blur-md transition duration-300 hover:scale-105 hover:bg-black/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue-light',
-                        isHomeVideoPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'
+                       isHomeVideoPlaying ? 'pointer-events-none opacity-0 md:pointer-events-auto md:group-hover:opacity-100' : 'opacity-100'
                 ]}
                 aria-label={isHomeVideoPlaying ? 'Пауза' : 'Пусни видео'}
         >
