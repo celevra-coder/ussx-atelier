@@ -107,13 +107,17 @@
                 </div>
 
                 <div class="mt-12 flex flex-wrap items-center justify-center gap-4 text-center">
-                        <button onclick={() => scrollTo('#contact')} class="btn-primary">
-                                Заяви консултация
-                        </button>
+        <button onclick={() => scrollTo('#contact')} class="btn-primary">
+        Запиши се за обучение
+</button>
 
-                        <button onclick={() => scrollTo('#contact')} class="btn-outline">
-                                Запиши се за обучение
-                        </button>
-                </div>
+<button type="button" class="btn-primary">
+        USS X ACADEMY
+</button>
+
+        <button onclick={() => scrollTo('#contact')} class="btn-primary">
+                Заяви консултация
+        </button>
+</div>
         </div>
 </section>
