@@ -47,58 +47,30 @@ import Footer from '$lib/components/Footer.svelte';
                 </div>
 
                 <div class="mt-14 grid gap-6 md:grid-cols-3">
-                        <article class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-xl backdrop-blur">
-                                <h2 class="mb-4 text-xl font-bold text-brand-text" style="font-family: var(--font-display);">
-                                        3D печат и моделиране
-                                </h2>
+        <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] shadow-xl backdrop-blur">
+                <img
+                        src="/images/stem/3d-pechat-modelirane.png"
+                        alt="3D печат и моделиране"
+                        class="h-full w-full object-cover"
+                />
+        </div>
 
-                                <p class="text-sm leading-7 text-brand-muted">
-                                        В този кръжок децата преминават през целия процес от идея до реален обект.
-                                        Те се учат да мислят пространствено, да проектират модели, да разбират как
-                                        работи 3D принтерът и как дигиталният дизайн се превръща във физически предмет.
-                                </p>
+        <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] shadow-xl backdrop-blur">
+                <img
+                        src="/images/stem/robotika-programirane.png"
+                        alt="Роботика и програмиране"
+                        class="h-full w-full object-cover"
+                />
+        </div>
 
-                                <p class="mt-4 text-sm leading-7 text-brand-muted">
-                                        Заниманията развиват въображение, прецизност, търпение и умение за подобряване
-                                        на проекта след тест и грешка.
-                                </p>
-                        </article>
-
-                        <article class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-xl backdrop-blur">
-                                <h2 class="mb-4 text-xl font-bold text-brand-text" style="font-family: var(--font-display);">
-                                        Роботика и програмиране
-                                </h2>
-
-                                <p class="text-sm leading-7 text-brand-muted">
-                                        Роботиката помага на децата да разберат връзката между код, механика и движение.
-                                        Те създават конструкции, програмират действия, тестват решения и виждат веднага
-                                        как техният код управлява реален модел.
-                                </p>
-
-                                <p class="mt-4 text-sm leading-7 text-brand-muted">
-                                        Това развива логическо мислене, работа в екип, последователност и умение за
-                                        решаване на задачи.
-                                </p>
-                        </article>
-
-                        <article class="rounded-3xl border border-white/10 bg-white/[0.04] p-6 shadow-xl backdrop-blur">
-                                <h2 class="mb-4 text-xl font-bold text-brand-text" style="font-family: var(--font-display);">
-                                        Infento — инженерство в реален мащаб
-                                </h2>
-
-                                <p class="text-sm leading-7 text-brand-muted">
-                                        Infento е модулна образователна система, чрез която децата могат да изграждат
-                                        реални превозни средства и конструкции в човешки мащаб. Вместо да работят само
-                                        с малки модели, те виждат как механиката, балансът, движението и конструкцията
-                                        работят в реалния свят.
-                                </p>
-
-                                <p class="mt-4 text-sm leading-7 text-brand-muted">
-                                        С Infento децата преминават през истински инженерен процес — идея, дизайн,
-                                        сглобяване, тест, подобрение и представяне на резултата.
-                                </p>
-                        </article>
-                </div>
+        <div class="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] shadow-xl backdrop-blur">
+                <img
+                        src="/images/stem/infento-inzhenerstvo.png"
+                        alt="Infento инженерство"
+                        class="h-full w-full object-cover"
+                />
+        </div>
+</div>
         </div>
 </section>
 
