@@ -76,7 +76,7 @@
         use:inview
 >
         <img
-                src="/images/solar-banner.png"
+                src="/images/solar-split-banner.png"
                 alt="Соларна инсталация и обучение"
                 class="h-auto w-full object-cover"
                 loading="lazy"
