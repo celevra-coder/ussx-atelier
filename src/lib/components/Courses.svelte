@@ -3,7 +3,7 @@
         import CourseCard from './CourseCard.svelte';
         import { inview } from '$lib/actions/inview';
 
-        export let showMobileImages = false;
+        let { showMobileImages = false } = $props();
 
         const mobileImages = [
                 {
