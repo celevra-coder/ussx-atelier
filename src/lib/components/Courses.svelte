@@ -23,11 +23,11 @@
 
 <section id="kursovedecata" class="py-24">
         <div class="mx-auto max-w-7xl px-4 sm:px-6">
-                <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div class="grid gap-12 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
                         {#each courses as course, i}
                                 <div class="reveal h-full" use:inview style="transition-delay: {i * 100}ms;">
                                         {#if showMobileImages && mobileImages[i]}
-                                                <div class="mb-5 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] shadow-xl backdrop-blur md:hidden">
+                                                <div class="mb-8 overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] shadow-xl backdrop-blur md:hidden">
                                                         <img
                                                                 src={mobileImages[i].src}
                                                                 alt={mobileImages[i].alt}
@@ -36,7 +36,9 @@
                                                 </div>
                                         {/if}
 
-                                        <CourseCard {course} />
+                                        <div class="relative z-10">
+                                                <CourseCard {course} />
+                                        </div>
                                 </div>
                         {/each}
                 </div>
