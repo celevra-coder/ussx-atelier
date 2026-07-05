@@ -69,6 +69,27 @@
         </section>
 
         <PrintingService />
+        <!-- Creative SEO marker -->
+        <section class="px-4 pb-24">
+                <div class="mx-auto max-w-5xl rounded-3xl border border-white/10 bg-white/[0.03] p-8 text-brand-muted shadow-xl backdrop-blur md:p-10">
+                        <h2 class="text-2xl font-bold text-brand-text md:text-3xl">
+                                Креативно инженерство, 3D печат и прототипиране
+                        </h2>
+
+                        <p class="mt-5 leading-8">
+                                USSX предлага услуги за 3D моделиране, 3D печат, прототипиране и креативно инженерство. Помагаме при изработка на идеи, макети, модели, тестови детайли и работещи прототипи.
+                        </p>
+
+                        <p class="mt-4 leading-8">
+                                Услугите са подходящи за ученици, млади създатели, стартъп екипи, преподаватели, бизнеси и хора с конкретна идея, която трябва да се превърне в реален обект или демонстрационен модел.
+                        </p>
+
+                        <p class="mt-4 leading-8">
+                                В секцията за креативно инженерство включваме и проекти, свързани с водородни системи, зелени технологии, инженерно мислене и ученически стартъпи.
+                        </p>
+                </div>
+        </section>
+
         <ContactForm defaultType="print" />
 </main>
 
