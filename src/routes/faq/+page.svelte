@@ -3,6 +3,20 @@
         import FAQ from '$lib/components/FAQ.svelte';
         import Footer from '$lib/components/Footer.svelte';
         import CookieBanner from '$lib/components/CookieBanner.svelte';
+        import { faq } from '$lib/data/faq';
+
+        const faqSchema = {
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: faq.map((item) => ({
+                        '@type': 'Question',
+                        name: item.question,
+                        acceptedAnswer: {
+                                '@type': 'Answer',
+                                text: item.answer
+                        }
+                }))
+        };
 </script>
 
 <svelte:head>
@@ -31,6 +45,8 @@
                 content="??????? ? ???????? ?? STEM ???????, 3D ?????, ????????, Infento ? ??????? ????????."
         />
         <meta name="twitter:image" content="https://uss-x.bg/images/stem/robotika-programirane.png" />
+        <!-- FAQ Schema marker -->
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
 </svelte:head>
 
 <Navbar />
