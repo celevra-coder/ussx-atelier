@@ -35,6 +35,60 @@
         <meta name="twitter:image" content="https://uss-x.bg/images/solar-split-banner.png" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+        <!-- Schema.org structured data -->
+        <script type="application/ld+json">
+{
+        "@context": "https://schema.org",
+        "@graph": [
+                {
+                        "@type": "Organization",
+                        "@id": "https://uss-x.bg/#organization",
+                        "name": "USSX",
+                        "url": "https://uss-x.bg/",
+                        "description": "Ателие за STEM кръжоци, 3D печат, креативно инженерство, соларни решения и зелени технологии.",
+                        "sameAs": [
+                                "https://www.facebook.com/profile.php?id=61591372162296"
+                        ],
+                        "areaServed": {
+                                "@type": "Country",
+                                "name": "България"
+                        },
+                        "knowsAbout": [
+                                "STEM кръжоци за деца",
+                                "3D печат",
+                                "3D моделиране",
+                                "роботика",
+                                "соларни решения",
+                                "фотоволтаични системи",
+                                "креативно инженерство",
+                                "зелени технологии"
+                        ]
+                },
+                {
+                        "@type": "WebSite",
+                        "@id": "https://uss-x.bg/#website",
+                        "url": "https://uss-x.bg/",
+                        "name": "USSX",
+                        "publisher": {
+                                "@id": "https://uss-x.bg/#organization"
+                        },
+                        "inLanguage": "bg-BG"
+                },
+                {
+                        "@type": "EducationalOrganization",
+                        "@id": "https://uss-x.bg/#educational-organization",
+                        "name": "USSX",
+                        "url": "https://uss-x.bg/",
+                        "description": "Практически STEM кръжоци за деца, соларни обучения, 3D печат и инженерни проекти.",
+                        "parentOrganization": {
+                                "@id": "https://uss-x.bg/#organization"
+                        }
+                }
+        ]
+}
+        </script>
+
 </svelte:head>
 
 {@render children()}
