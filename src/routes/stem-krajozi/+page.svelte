@@ -75,6 +75,27 @@
         </section>
 
         <Courses showMobileImages={true} />
+
+        <section class="px-4 pb-24">
+                <div class="mx-auto max-w-5xl rounded-3xl border border-white/10 bg-white/[0.03] p-8 text-brand-muted shadow-xl backdrop-blur md:p-10">
+                        <h2 class="text-2xl font-bold text-brand-text md:text-3xl">
+                                STEM кръжоци за деца в Пловдив, Варна и Габрово
+                        </h2>
+
+                        <p class="mt-5 leading-8">
+                                USSX предлага практически STEM кръжоци за деца, които искат да създават, да сглобяват, да програмират и да тестват свои идеи. Заниманията съчетават 3D печат, роботика, програмиране и Infento инженерство.
+                        </p>
+
+                        <p class="mt-4 leading-8">
+                                Курсовете са подходящи за деца, които имат интерес към техника, моделиране, конструиране, роботи и нови технологии. Чрез реални проекти децата развиват логическо мислене, креативност, инженерна култура и увереност.
+                        </p>
+
+                        <p class="mt-4 leading-8">
+                                Записването за STEM кръжоци може да се направи чрез формата за контакт, като се избере желаният град: Пловдив, Варна или Габрово.
+                        </p>
+                </div>
+        </section>
+
         <ContactForm />
 </main>
 
