@@ -106,6 +106,47 @@
                         {/each}
                 </div>
 
+
+                <!-- Solar targeted SEO blocks marker -->
+                <div class="mt-14 grid gap-6 md:grid-cols-2">
+                        <article class="rounded-3xl border border-white/10 bg-white/[0.03] p-7 text-brand-muted shadow-xl backdrop-blur">
+                                <h2 class="text-2xl font-bold text-brand-text">
+                                        Курсове за соларни специалисти
+                                </h2>
+                                <p class="mt-4 leading-7">
+                                        USSX провежда курсове за соларни специалисти, подходящи за начинаещи, техници и хора, които искат да навлязат в сферата на фотоволтаичните системи. Обучението съчетава теория, практика, работа с компоненти и основи на монтажа.
+                                </p>
+                        </article>
+
+                        <article class="rounded-3xl border border-white/10 bg-white/[0.03] p-7 text-brand-muted shadow-xl backdrop-blur">
+                                <h2 class="text-2xl font-bold text-brand-text">
+                                        Монтаж на соларни инсталации
+                                </h2>
+                                <p class="mt-4 leading-7">
+                                        Предлагаме монтаж на соларни инсталации и фотоволтаични системи за домове, бизнес обекти и индивидуални нужди. Решението се съобразява с потреблението, покрива, бюджета и реалните условия на обекта.
+                                </p>
+                        </article>
+
+                        <article class="rounded-3xl border border-white/10 bg-white/[0.03] p-7 text-brand-muted shadow-xl backdrop-blur">
+                                <h2 class="text-2xl font-bold text-brand-text">
+                                        Фотоволтаични системи за домове и бизнес
+                                </h2>
+                                <p class="mt-4 leading-7">
+                                        Работим с фотоволтаични системи, соларни панели, инвертори, монтажни конструкции и решения за по-добра енергийна независимост. Подходът е практичен и съобразен с реалното потребление.
+                                </p>
+                        </article>
+
+                        <article class="rounded-3xl border border-white/10 bg-white/[0.03] p-7 text-brand-muted shadow-xl backdrop-blur">
+                                <h2 class="text-2xl font-bold text-brand-text">
+                                        Соларни консултации, оглед и проектиране
+                                </h2>
+                                <p class="mt-4 leading-7">
+                                        Преди изграждане на соларна система започваме с консултация, оглед и анализ. Така може да се избере подходяща фотоволтаична система, мощност, тип монтаж и компоненти.
+                                </p>
+                        </article>
+                </div>
+
+
                 <div class="mt-12 flex flex-wrap items-center justify-center gap-4 text-center">
                         <button onclick={() => scrollTo('#contact')} class="btn-primary">
                                 Запиши се за обучение
