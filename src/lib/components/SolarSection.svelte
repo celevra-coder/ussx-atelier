@@ -84,7 +84,7 @@
                 </div>
 
                 <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                        {#each features as { Icon, title, text, href, linkLabel }, i}
+                        {#each features as { Icon, title, text }, i}
                                 <div
                                         class="reveal card-gradient-border group flex h-full flex-col gap-4 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(168,230,61,0.2)]"
                                         use:inview
@@ -104,12 +104,12 @@
                                         <p class="text-sm leading-relaxed text-brand-muted">{text}</p>
 
                                         <a
-                                                href={href}
+                                                href={i === 0 ? 'https://www.ussxacademy.bg/' : 'https://ussxsolar.com/'}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                class="mt-auto inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-r from-brand-blue to-brand-green px-5 py-2.5 text-xs font-bold text-white shadow-lg transition hover:scale-105 hover:shadow-[0_0_18px_rgba(168,230,61,0.35)]"
+                                                class="mt-auto inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-brand-blue to-brand-green px-5 py-2.5 text-xs font-bold text-white shadow-lg transition hover:scale-105 hover:shadow-[0_0_18px_rgba(168,230,61,0.35)]"
                                         >
-                                                {linkLabel}
+                                                {i === 0 ? 'USSX ACADEMY' : 'USSX SOLAR'}
                                         </a>
                                 </div>
                         {/each}
