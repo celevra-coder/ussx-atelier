@@ -92,19 +92,6 @@
                 </ul>
 
                 <div class="flex items-center gap-3">
-                        <div class="hidden items-center gap-2 md:flex">
-                                {#each externalLinks as link}
-                                        <a
-                                                href={link.href}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                class="btn-primary text-xs"
-                                        >
-                                                {link.label}
-                                        </a>
-                                {/each}
-                        </div>
-
                         <button
                                 onclick={() => goTo('/stem-krajozi#contact')}
                                 class="btn-primary hidden text-sm sm:inline-flex"
