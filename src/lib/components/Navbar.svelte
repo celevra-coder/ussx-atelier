@@ -84,7 +84,7 @@
                                                 href={link.href}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                class="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand-blue via-brand-blue-light to-brand-green px-3 py-1 text-[9px] font-bold uppercase tracking-wide text-white shadow-md transition hover:scale-105"
+                                                class="inline-flex items-center justify-center rounded-full px-3 py-1 text-[9px] font-bold uppercase tracking-wide text-white shadow-md transition hover:scale-105" style="background: linear-gradient(90deg, #3B6FE8 0%, #6EC6F5 45%, #A8E63D 100%);"
                                         >
                                                 {link.label}
                                         </a>
