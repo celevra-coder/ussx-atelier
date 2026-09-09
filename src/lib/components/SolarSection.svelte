@@ -107,7 +107,7 @@
                                                 href={i === 0 ? 'https://www.ussxacademy.bg/' : 'https://ussxsolar.com/'}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                class="mt-auto inline-flex w-full items-center justify-center rounded-full bg-gradient-to-r from-brand-blue to-brand-green px-5 py-2.5 text-xs font-bold text-white shadow-lg transition hover:scale-105 hover:shadow-[0_0_18px_rgba(168,230,61,0.35)]"
+                                                class="btn-primary mt-auto w-full justify-center text-xs"
                                         >
                                                 {i === 0 ? 'USSX ACADEMY' : 'USSX SOLAR'}
                                         </a>

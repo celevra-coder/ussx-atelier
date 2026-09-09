@@ -84,7 +84,7 @@
                                                 href={link.href}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                class="rounded-full bg-gradient-to-r from-brand-blue to-brand-green px-3 py-1.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-lg transition hover:scale-105"
+                                                class="btn-primary px-3 py-1.5 text-[10px] uppercase tracking-wide"
                                         >
                                                 {link.label}
                                         </a>
