@@ -84,7 +84,7 @@
                 </div>
 
                 <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                        {#each features as { Icon, title, text }, i}
+                        {#each features as { Icon, title, text, href, linkLabel }, i}
                                 <div
                                         class="reveal card-gradient-border group flex h-full flex-col gap-4 p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(168,230,61,0.2)]"
                                         use:inview
@@ -102,6 +102,15 @@
                                         </h3>
 
                                         <p class="text-sm leading-relaxed text-brand-muted">{text}</p>
+
+                                        <a
+                                                href={href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="mt-auto inline-flex w-fit rounded-full bg-gradient-to-r from-brand-blue to-brand-green px-4 py-2 text-xs font-bold uppercase tracking-wide text-white shadow-lg transition hover:scale-105"
+                                        >
+                                                {linkLabel}
+                                        </a>
                                 </div>
                         {/each}
                 </div>
