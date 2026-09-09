@@ -107,7 +107,7 @@
                                                 href={href}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                class="mt-auto inline-flex w-fit rounded-full bg-gradient-to-r from-brand-blue to-brand-green px-4 py-2 text-xs font-bold uppercase tracking-wide text-white shadow-lg transition hover:scale-105"
+                                                class="mt-auto inline-flex w-fit items-center justify-center rounded-full bg-gradient-to-r from-brand-blue to-brand-green px-5 py-2.5 text-xs font-bold text-white shadow-lg transition hover:scale-105 hover:shadow-[0_0_18px_rgba(168,230,61,0.35)]"
                                         >
                                                 {linkLabel}
                                         </a>
