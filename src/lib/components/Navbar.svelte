@@ -56,28 +56,43 @@
 </script>
 
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" class:scrolled>
-        <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
-                <a
-                        href="/"
-                        class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2 shadow-[0_8px_30px_rgba(0,0,0,0.18)] backdrop-blur-md transition hover:bg-white/[0.07]"
-                        aria-label="USSX и училище"
-                >
-                        <img
-                                src="/images/ussx-mark-transparent.png"
-                                alt="USSX"
-                                class="h-11 w-auto object-contain md:h-14"
-                        />
+        <nav class="mx-auto flex max-w-7xl items-start justify-between px-4 py-3 sm:px-6">
+                <div class="flex flex-col items-center gap-2">
+                        <a
+                                href="/"
+                                class="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-3 py-2 shadow-[0_8px_30px_rgba(0,0,0,0.18)] backdrop-blur-md transition hover:bg-white/[0.07]"
+                                aria-label="USSX и училище"
+                        >
+                                <img
+                                        src="/images/ussx-mark-transparent.png"
+                                        alt="USSX"
+                                        class="h-10 w-auto object-contain md:h-12"
+                                />
 
-                        <span class="h-9 w-px bg-white/20 md:h-11"></span>
+                                <span class="h-8 w-px bg-white/20 md:h-10"></span>
 
-                        <img
-                                src="/images/school-mark-transparent.png"
-                                alt="ПГИКТ"
-                                class="h-10 w-auto object-contain md:h-13"
-                        />
-                </a>
+                                <img
+                                        src="/images/school-mark-transparent.png"
+                                        alt="ПГИКТ"
+                                        class="h-9 w-auto object-contain md:h-11"
+                                />
+                        </a>
 
-                <ul class="hidden items-center gap-5 lg:flex">
+                        <div class="hidden items-center gap-2 md:flex">
+                                {#each externalLinks as link}
+                                        <a
+                                                href={link.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                class="rounded-full bg-gradient-to-r from-brand-blue to-brand-green px-3 py-1.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-lg transition hover:scale-105"
+                                        >
+                                                {link.label}
+                                        </a>
+                                {/each}
+                        </div>
+                </div>
+
+                <ul class="hidden items-center gap-5 pt-5 lg:flex">
                         {#each links as link}
                                 <li>
                                         <button
@@ -91,7 +106,7 @@
                         {/each}
                 </ul>
 
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-3 pt-3">
                         <button
                                 onclick={() => goTo('/stem-krajozi#contact')}
                                 class="btn-primary hidden text-sm sm:inline-flex"
@@ -116,7 +131,7 @@
 
 {#if mobileOpen}
         <div
-                class="fixed inset-0 z-40 flex flex-col bg-brand-bg/95 pt-20 backdrop-blur-lg lg:hidden"
+                class="fixed inset-0 z-40 flex flex-col bg-brand-bg/95 pt-24 backdrop-blur-lg lg:hidden"
                 transition:fly={{ y: -20, duration: 250 }}
         >
                 <nav class="flex flex-col items-center gap-6 p-6">
