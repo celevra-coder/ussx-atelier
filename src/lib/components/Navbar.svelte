@@ -15,7 +15,8 @@
 
         const externalLinks = [
                 { label: 'USSX SOLAR', href: 'https://ussxsolar.com/' },
-                { label: 'USSX ACADEMY', href: 'https://www.ussxacademy.bg/' }
+                { label: 'USSX ACADEMY', href: 'https://www.ussxacademy.bg/' },
+                { label: '\u0422\u0423\u0425\u041b\u0418 \u041e\u0422 \u0422\u0415\u041a\u0421\u0422\u0418\u041b', href: 'https://www.ussxcreative.com/#top' }
         ];
 
         $effect(() => {
