@@ -92,6 +92,18 @@
                                         </h3>
 
                                         <p class="text-sm leading-relaxed text-brand-muted">{text}</p>
+
+                                        {#if i === 0}
+                                                <a
+                                                        href="https://www.ussxcreative.com/#top"
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        class="mt-auto inline-flex w-fit items-center justify-center rounded-full px-3 py-1.5 text-[11px] font-bold uppercase tracking-wide text-white shadow-md transition hover:scale-105"
+                                                        style="background: linear-gradient(90deg, #3B6FE8 0%, #6EC6F5 45%, #A8E63D 100%);"
+                                                >
+                                                        ????? ?? ???????
+                                                </a>
+                                        {/if}
                                 </div>
                         {/each}
                 </div>
