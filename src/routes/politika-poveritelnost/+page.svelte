@@ -29,7 +29,7 @@
 		<p>Данните се съхраняват за срок от 2 години след последния контакт, освен ако законодателството не изисква по-дълъг срок.</p>
 
 		<h2 class="text-brand-text font-bold text-lg mt-8">Вашите права</h2>
-		<p>Имате право на достъп, коригиране, изтриване, ограничаване на обработката, преносимост на данните и право на оттегляне на съгласието. За упражняване на правата си, свържете се с нас на: <a href="mailto:info@ussx.bg" class="text-brand-blue-light underline">info@ussx.bg</a>.</p>
+		<p>Имате право на достъп, коригиране, изтриване, ограничаване на обработката, преносимост на данните и право на оттегляне на съгласието. За упражняване на правата си, свържете се с нас на: <a href="mailto:ussxoffice.mihaylov@yahoo.com" class="text-brand-blue-light underline">ussxoffice.mihaylov@yahoo.com</a>.</p>
 
 		<h2 class="text-brand-text font-bold text-lg mt-8">Жалби</h2>
 		<p>Имате право да подадете жалба до Комисията за защита на личните данни (КЗЛД), уебсайт: <a href="https://www.cpdp.bg" target="_blank" rel="noopener noreferrer" class="text-brand-blue-light underline">www.cpdp.bg</a>.</p>

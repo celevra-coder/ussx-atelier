@@ -142,7 +142,7 @@
                         submitted = true;
                 } catch (err) {
                         console.error('[USSX] Submission failed:', err);
-                        submitError = 'Възникна грешка при изпращането. Моля, опитайте отново или ни пишете на info@ussx.bg.';
+                        submitError = 'Възникна грешка при изпращането. Моля, опитайте отново или ни пишете на ussxoffice.mihaylov@yahoo.com.';
                 } finally {
                         submitting = false;
                 }

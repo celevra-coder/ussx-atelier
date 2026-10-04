@@ -55,7 +55,7 @@ export const POST: RequestHandler = async ({ request }) => {
         const resend = new Resend(resendApiKey);
 
         const { error } = await resend.emails.send({
-                from: 'USSX site <onboarding@resend.dev>',
+                from: 'USSX site <ussxoffice.mihaylov@yahoo.com>',
                 to: [notifyEmail],
                 subject,
                 html

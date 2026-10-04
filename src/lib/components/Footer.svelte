@@ -96,8 +96,8 @@
         </p>
         <p>
                 ✉️
-                <a href="mailto:atelie3dpechat@gmail.com" class="transition-colors hover:text-brand-text">
-                        atelie3dpechat@gmail.com
+                <a href="mailto:ussxoffice.mihaylov@yahoo.com" class="transition-colors hover:text-brand-text">
+                        ussxoffice.mihaylov@yahoo.com
                 </a>
         </p>
 </address>
